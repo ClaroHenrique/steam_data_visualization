@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steam Visualization</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googlea	pis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-layout">
+      <div class="app-container">
+        <header class="app-heading">
+          <h1 class="shadow-text">
+            Visualizing STEAM: a digital game platform
+          </h1>
+        </header>
+
+        <main class="app-main">
+          <div class="card">
+            <section class="data-section">
+              <h2>Objective</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    Our visualization aims to develop the interactive analytics
+                    dashboard that builds on the
+                    <strong class="steam">Steam</strong> data on games and
+                    individual players collected through open-source APIs to
+                    offer the insightful look at recent trends in the gaming
+                    industry.
+                  </p>
+                  <p>
+                    We start by visualizating the release rate of the games by
+                    year. This chart is interactive, so you can filter the years
+                    range.
+                  </p>
+                </div>
+                <div class="data-row">
+                  <p>
+                    We conducted a sampling process to curate a dataset
+                    comprising the <strong>250 most reviewed games</strong> that
+                    were released <strong>before the year 2019</strong>,
+                    ensuring that each selected game possesses a minimum age of
+                    five years. This criterion not only guarantees a diverse
+                    representation of the gaming landscape but also focuses on
+                    titles that have withstood the test of time.
+                  </p>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="Released games by year"
+                    width="1000"
+                    height="460"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+release_by_year_bin_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Questions</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    This visualization aims to answer some question about to the
+                    gaming culture on <strong class="steam">Steam</strong>:
+                  </p>
+                  <ol class="question-list">
+                    <li>What are the most popular genres and tags on Steam?</li>
+                    <li>What games are more popular right now?</li>
+                    <li>What is the relation of popularity and reviews?</li>
+                    <li>What is the relation of price and reviews?</li>
+                    <li>What countries are producing more games?</li>
+                  </ol>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Genres</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    The pie chart on the left side compares the
+                    <strong
+                      >quantity by year of released games separated by genre
+                      [1]</strong
+                    >. Note that a single game can have multiple genres (e.g.
+                    Grand Theft Auto V is both Action and Adventure), in that
+                    case, each genre is considered.
+                  </p>
+                </div>
+                <div class="data-row">
+                  <p>
+                    The line chart on the right side displays player engagement
+                    trends for the different game genres over the years. Each
+                    line represents a genre and compares the popularity of a
+                    gender in the players community
+                    <strong class="steam">[2]</strong>.
+                  </p>
+                </div>
+              </div>
+              <div class="data-graph genres-graphs">
+                <div class="data-graph-content genre-pie">
+                  <iframe
+                    title="genre pie"
+                    width="300"
+                    height="464"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+genre_pie_plot"
+                  ></iframe>
+                </div>
+
+                <div class="data-graph-content genre-avg-players">
+                  <iframe
+                    title="avg players"
+                    width="530"
+                    height="448"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+avg_players_by_genre_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Tags</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    On Steam, tags serve as descriptive keywords for the Steam
+                    community collectively. Unlike genres, those
+                    <strong>tags are added by the players</strong> and are based
+                    on user input and votes.
+                  </p>
+                  <p>
+                    This freedom of input permits more specific descriptions and
+                    offen bring rich information about the game. quantity by
+                    year of released games separated by genre.
+                  </p>
+                </div>
+                <div class="data-row">
+                  <p>
+                    As an example, we have Grand Theft Auto V with genres equals
+                    "Action, Adventure" and tags equals "Open World, Action,
+                    Automobile Sim, Multiplayer, Crime', Third Person, ...",
+                    with way more details.
+                  </p>
+                  <p>
+                    We now present a word cloud where we highlight the most
+                    frequent tags added by the users.
+                    <strong class="steam">[1]</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="word cloud"
+                    width="1000"
+                    height="420"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+tag_word_cloud_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Most popular games</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    We now present the
+                    <strong>top 10 most popular games</strong> on
+                    <strong class="steam">Steam</strong>, the games are ordered
+                    by the mean quantity of playes between the years of 2019 and
+                    2023 <strong class="steam">[2]</strong>.
+                  </p>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="top 10 games"
+                    width="1000"
+                    height="543"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+top_10_games_bar_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Review and popularity</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    <strong class="steam">Steam</strong> games reviews are
+                    binary, each player can give one positive or negative
+                    review. To analyse them, we present a scatter plot with the
+                    review rate
+                    <strong
+                      >(positive reviews / total reviews) and popularity
+                      (average number of players between jan-2019 and
+                      sep-2023)</strong
+                    >
+                    <strong class="steam">[3]</strong>.
+                  </p>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="review and popularity"
+                    width="1000"
+                    height="548"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+review_popularity_scatter_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Price and popularity</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    One interesting comparation is the
+                    <strong>proportion of free and paid games</strong>
+                    <strong class="steam">[4]</strong>. We present this data on
+                    the pie chart on the right.
+                  </p>
+                  <p>
+                    We consider the initial price
+                    <strong>(price of the game on the release)</strong>. To
+                    analyse the relationship between price and popularity,
+                    <strong>below</strong> we present a scatter plot with the
+                    price and popularity
+                    <strong
+                      >(average number of players between jan-2019 and
+                      sep-2023)</strong
+                    >
+                    <strong class="steam">[4]</strong>.
+                  </p>
+                </div>
+
+                <div class="data-row" style="padding-top: 0">
+                  <iframe
+                    title="payment type"
+                    width="100%"
+                    height="286"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+free_games_pie_plot"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="price and popularity"
+                    width="1000"
+                    height="548"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+price_popularity_scatter_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Developers</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    We are also interested in the
+                    <strong class="steam">Steam</strong> developer community. We
+                    first analise the supported plaforms (operational systems)
+                    of the games on the pie chart on the <strong>right</strong>
+                    <strong class="steam">[5]</strong>. There are tree possible
+                    platforms: <strong>Windows, Linux and Mac</strong>, and one
+                    interesting fact is that all games support Windows Steam.
+                  </p>
+                  <p>
+                    We also analise relationship between the developers and
+                    games using a graph plot. In this plot,
+                    <strong>red circles represent the games</strong> while
+                    <strong>blue circles represents the developers</strong>.
+                    Also, the
+                    <strong
+                      >developer nodes are sized by the sum of popularity of all
+                      it's games</strong
+                    >.
+                  </p>
+                </div>
+
+                <div class="data-row" style="padding-top: 0">
+                  <iframe
+                    title="developers pie"
+                    width="100%"
+                    height="286"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+platforms_pie_plot"
+                  ></iframe>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="developers game"
+                    width="1000"
+                    height="820"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+graph_developer_game"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+
+            <section class="data-section">
+              <h2>Developers World Map</h2>
+              <div class="data-columns">
+                <div class="data-row">
+                  <p>
+                    To see what countries are producing more games, we make a
+                    world choropleth map, where each country is shaded to show
+                    the <strong>quantity of game development companies</strong>
+                    <strong class="steam">[6]</strong>.
+                  </p>
+                </div>
+              </div>
+              <div class="data-graph">
+                <div class="data-graph-content">
+                  <iframe
+                    title="world map"
+                    width="1000"
+                    height="706"
+                    src="https://observablehq.com/embed/69559f5fbde20253?cells=viewof+world_dev_plot"
+                  ></iframe>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+
+        <footer class="app-footer">
+          <p class="shadow-text">Visualization created by:</p>
+          <ul>
+            <li>
+              <a
+                class="shadow-text"
+                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                target="_blank"
+              >
+                Claro Henrique
+              </a>
+            </li>
+            <li>
+              <a
+                class="shadow-text"
+                href="https://www.youtube.com/watch?v=J---aiyznGQ"
+                target="_blank"
+              >
+                Natã Raulino
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

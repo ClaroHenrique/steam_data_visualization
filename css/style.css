@@ -1,0 +1,308 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  font-family: "Bitter", sans-serif;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 10, 50, 0.7)),
+    url("../img/steam_back.jpg");
+}
+
+.app-layout {
+  width: 100%;
+  margin: 1.5rem auto;
+  padding: 0 1.5rem;
+  max-width: 576px;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 100vh;
+}
+
+.app-heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shadow-text {
+  color: #f0f0e1;
+  text-shadow: 5px 5px 4px #000000;
+}
+
+.app-heading h1 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  position: relative;
+  font-size: 2.8rem;
+  font-weight: bolder;
+  letter-spacing: 0.15rem;
+}
+
+.app-heading h1::before {
+  width: 28px;
+  height: 5px;
+  display: block;
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  margin-left: -14px;
+  background-color: #f0f0e1;
+}
+
+.app-heading h1::after {
+  width: 100px;
+  height: 1px;
+  display: block;
+  content: "";
+  position: relative;
+  margin-top: 25px;
+  left: 50%;
+  margin-left: -50px;
+  background-color: #f0f0e1;
+}
+
+.app-main {
+  flex: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin: 0 auto;
+  max-width: 1050px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.data-section {
+  width: 100%;
+  color: #1c2e46;
+  margin-bottom: 1rem;
+}
+
+.data-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.5em;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.data-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: #1c2e46;
+}
+
+.data-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 95%;
+  max-width: 255px;
+  background-color: #1c2e46;
+}
+
+.data-columns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.data-row {
+  flex: 1;
+  padding: 1rem;
+}
+
+.data-row p {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+  line-height: 1.3;
+  text-align: justify;
+}
+
+.steam {
+  color: #4e79a7;
+}
+
+.data-graph {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.data-graph-content {
+  overflow-x: auto;
+  overflow-y: hidden;
+  width: fit-content;
+}
+
+.genres-graphs {
+  justify-content: space-between;
+}
+
+.genre-pie {
+  flex-basis: 35%;
+}
+
+.genre-avg-players {
+  flex-basis: 53%;
+}
+
+.question-list {
+  line-height: 2;
+  margin-left: 2rem;
+}
+
+.question-list li::marker {
+  color: #4e79a7;
+  font-weight: bold;
+}
+
+.app-footer {
+  display: block;
+  margin-left: auto;
+}
+
+.app-footer p {
+  font-weight: bolder;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+
+.app-footer ul {
+  line-height: 1.5;
+}
+
+.app-footer ul li a {
+  font-weight: bolder;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgb(239, 183, 85);
+  letter-spacing: 0.1rem;
+
+  background: linear-gradient(to right, transparent, transparent),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.app-footer ul li a:hover {
+  background-size: 0 3px, 100% 3px;
+}
+
+/* RESPONSIVE LAYOUT */
+@media screen and (min-width: 768px) {
+  .app-layout {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .app-layout {
+    max-width: 992px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .app-layout {
+    max-width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .app-layout {
+    max-width: 1600px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .data-columns {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .data-row {
+    padding: 0 1rem;
+  }
+
+  .data-graph.genres-graphs {
+    flex-direction: column;
+  }
+
+  .genre-pie {
+    flex: 1;
+    width: 100%;
+  }
+
+  .genre-avg-players {
+    flex: 1;
+    width: 100%;
+  }
+}
+/* END RESPONSIVE LAYOUT */
